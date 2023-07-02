@@ -61,3 +61,4 @@ function getAverages(nums: number[], k: number): number[] {
 
   return avgs;
 }
+[2,4,3,45,45,4,6]
