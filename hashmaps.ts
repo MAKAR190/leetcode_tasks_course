@@ -46,9 +46,9 @@ function findWinners(matches: number[][]): number[][] {
   }
   for (const [key, value] of players) {
     if (value === 1) {
-      losers.push(key);
+      losers.push(key as never);
     } else if (value === 0) {
-      winners.push(key);
+      winners.push(key as never);
     }
   }
   return [winners.sort((a, b) => a - b), losers.sort((a, b) => a - b)];
@@ -80,6 +80,7 @@ function largestUniqueNumber(nums: number[]): number {
 function maxNumberOfBalloons(text: string): number {
   let total: number = Infinity;
   let word: string = "balloon";
+
   let count = new Map();
   for (let i = 0; i < text.length; i++) {
     count.set(text[i], (count.get(text[i]) || 0) + 1);
